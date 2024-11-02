@@ -1,23 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: pe-wa-ingress
+  name: ballsbouncing-ingress
 spec:
   rules:
-  - host: pe-wa
+  - host: ballsbouncing
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: pe-wa-service
+            name: ballsbouncing-service
             port:
               number: 5000 #80
       - path: /app
         pathType: Prefix
         backend:
           service:
-            name: pe-wa-service
+            name: ballsbouncing-service
             port:
               number: 5000 #80
